@@ -1,0 +1,32 @@
+/** Step one **/
+/** Did it in HTML :) **/
+/** Step two **/
+h1,h2{
+    font-family: "Nothing you could do", sans-serif;
+}
+/** Step three **/
+h1{
+    display: flex;
+    font-size: 46px;
+    letter-spacing: 1.75px;
+    text-shadow: 4px 2px 4px rgb(186,214,214);
+    align-items: center;
+    justify-content: center;
+    color: darkslategray;
+
+}
+/** Step four **/
+p,a,ul,li,h3{
+    font-family: "Lato", sans-serif;
+}
+/** Step five **/
+p span{
+    color: cadetblue;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+/** Step six **/
+h3{
+    font-size: 2em;
+    text-shadow: 4px 2px 4px rgb(186,214,214);
+}
