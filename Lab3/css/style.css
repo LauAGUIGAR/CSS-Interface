@@ -1,0 +1,36 @@
+/* Styling for the button */
+.svg-button {
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+/* Circle styling */
+.svg-button svg circle {
+    fill: cadetblue;
+    transition: fill 0.3s;
+}
+
+    /* Text styling */
+
+    .svg-button svg text {
+        font-size: 14px;
+        font-family: 'Silkscreen', sans-serif;
+        fill: darkslateblue;
+        text-anchor: middle;
+        alignment-baseline: middle;
+        transition: font-size 0.3s ease;
+    }
+
+    /* Hover effect for button */
+
+    .svg-button:hover svg circle {
+        fill: lightblue; /* Color when hovered */
+    }
+
+    /* Hover effect for text size change */
+
+    .svg-button:hover svg text {
+        font-size: 18px; /* Increase the font size when hovered */
+    }
+/*LAURA AGUIRRE 200595782*/
