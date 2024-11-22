@@ -1,0 +1,333 @@
+/* LAURA AGUIRRE GARCIA
+ 200595782 */
+/* PALETTE
+pink-lavender: #DBB6C7ff;
+tea-green: #D2DDA0ff;
+jasmine: #FFDB8Dff;
+columbia-blue: #B7CAD1ff;
+melon: #FBB1A4ff */
+/*Scroll effect */
+html{scroll-behavior: smooth;}
+/*Fonts*/
+@font-face {
+    font-family: "Oferta-do-Dia";
+    src: url("../fonts/Oferta-do-Dia.ttf");
+    font-weight: auto;
+}
+@font-face {
+    font-family: "Action_Man";
+    src: url("../fonts/Action_Man.ttf");
+    font-weight: auto;
+}
+body{
+    margin: 0;
+    background-image: url("../img/FONDO1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+/*Apply fonts to text items */
+h1,h2,h3,h4,h5,h6,th{font-family: "Oferta-do-Dia", sans-serif;}
+p,a,li,td,figcaption,span{
+    font-family: "Action_Man", sans-serif;
+    font-size: 1.2em;
+    text-decoration: none;
+}
+/** Header **/
+header{
+    display: flex;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    height: 10vh;
+    background-color: rgba(219, 182, 199, 0.5);
+    z-index: 9999;
+    transition: all .25s linear;
+}
+header div{
+    width: auto;
+    height: 100%;
+    flex-grow: 1;
+}
+header div img{
+    width: auto;
+    max-height: 80%;
+}
+header nav menu{
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+header nav menu li{
+    padding: 0 10px;}
+
+header nav menu li a{
+    color: #FFDB8Dff ;
+    position: relative;
+    font-size: 1.2rem;
+}
+/*Responsiveness */
+@media (max-width: 768px) {
+    header {
+        height: 12vh; /* Slightly bigger header height for smaller screens */
+    }
+
+    header nav menu {
+        flex-direction: column; /* Stack the menu items vertically on small screens */
+        align-items: center;
+    }
+
+    header nav menu li {
+        padding: 5px 0;
+    }
+
+    header nav menu li a {
+        font-size: 1rem; /* Smaller font size for mobile screens */
+    }
+}
+/* TOP OF PAGE */
+.TopOfPage{
+    height: 40vh;
+    width: auto ;
+    clip-path: polygon(100% 0,100% 100%, 50% 91%, 0 100%, 0 0 );
+    background-color: rgba(219, 182, 199, 0.9);
+}
+.TopOfPage div{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.TopOfPage div h1{
+    font-size: 6em;
+    color: #fe0096;
+    text-shadow: 4px 3px 3px rgba(0,0,0,.8);
+    letter-spacing: 2px;
+
+}
+.TopOfPage div h2{
+    font-size: 4em;
+    color: #00bbfe;
+    text-shadow: 4px 3px 3px rgba(0,0,0,.8);
+    letter-spacing: 2px;
+    margin-top: 1em;
+}
+@media (max-width: 768px) {
+    .TopOfPage {
+        height: 60vh; /* More height for mobile devices */
+    }
+
+    .TopOfPage div h1 {
+        font-size: 3em; /* Scaled-down heading for small screens */
+    }
+
+    .TopOfPage div h2 {
+        font-size: 2.5em;
+    }
+}
+/* SVG */
+#candies {
+    height: 60vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*SVG ANIMATION */
+
+    @keyframes moveFromEdges {
+        0% {
+            transform: translateX(-100%) scale(0); /* Start off-screen, to the left */
+        }
+        50% {
+            transform: translateX(50%) scale(1); /* Move towards the center, scaling to full size */
+        }
+        100% {
+            transform: translateX(0) scale(1); /* End at the final position */
+        }
+    }
+
+    @keyframes moveFromEdgesRight {
+        0% {
+            transform: translateX(100%) scale(0); /* Start off-screen, to the right */
+        }
+        50% {
+            transform: translateX(-50%) scale(1); /* Move towards the center, scaling to full size */
+        }
+        100% {
+            transform: translateX(0) scale(1); /* End at the final position */
+        }
+    }
+
+    .sweet-circle, .tart-circle {
+        width: 30vw;
+        height: 30vw;
+        margin: 2vw;
+        animation-duration: 2s;
+        animation-timing-function: ease-out;
+        animation-fill-mode: forwards;
+    }
+
+    .sweet-circle {
+        animation: moveFromEdges 2s forwards;
+    }
+
+    .tart-circle {
+        animation: moveFromEdgesRight 2s forwards;
+    }
+
+/* Hover state for Sweet circle */
+.sweet-hover text {
+    font-size: 8px;
+    fill: #FBB1A4ff;
+    text-shadow: 4px 3px 3px rgba(0,0,0,.5);
+    transition: all 0.8s ease;
+}
+
+/* Hover state for Tart circle */
+.tart-hover text {
+    font-size: 8px;
+    fill: #D2DDA0ff;
+    text-shadow: 4px 3px 3px rgba(0,0,0,.5);
+    transition: all 0.8s ease;
+}
+
+/* Product Image Grid */
+#products {
+    height: 65vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(210, 221, 160, 0.5);
+    margin-bottom: 50px ;
+}
+
+#products h3 {
+    margin-bottom: 20px;
+    font-size: 4em;
+}
+
+.productsimg {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    width: 100%;
+    justify-items: center;
+}
+
+#products div img {
+    width: auto;
+    height: 40vh;
+    max-width: 100%; }
+
+/* Mobile screen sizes */
+@media (max-width: 480px) {
+    #products h3 {
+        font-size: 2em; /* Even smaller font size for smaller screens */
+    }
+
+    .productsimg {
+        grid-template-columns: 1fr; /* 1 column on small screens */
+    }
+
+    #products div img {
+        height: 25vh; /* Adjust image height further for mobile */
+    }
+}
+
+/*Footer */
+/* Footer */
+footer {
+    background-color: rgba(183, 202, 209, 0.8);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 2vh 4vw; /* Smaller padding to reduce space */
+    font-size: 0.9em; /* Slightly smaller base font size */
+}
+
+/* Footer content grid */
+.footer-content {
+    display: grid; /* Using grid layout */
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    gap: 10px; /* Smaller gap between items */
+    width: 100%;
+    height: auto;
+}
+
+/* Logo section styling */
+.logo-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-logo {
+    width: 8vw; /* Smaller logo size */
+}
+
+/* About Us and Contact Us sections */
+.about-us-section, .contact-us-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h4 {
+    font-size: 1em; /* Smaller heading size */
+    font-weight: bold;
+}
+
+p {
+    font-size: 0.9em; /* Smaller paragraph text */
+    margin: 5px 0;
+    max-width: 400px;
+    line-height: 1.4; /* Tightened line spacing */
+}
+
+/* Contact us links styling */
+.contact-us-section a {
+    color: #ff7c9c;
+    text-decoration: none;
+}
+
+.contact-us-section a:hover {
+    text-decoration: underline;
+}
+
+/* Mobile screens adjustments */
+@media (max-width: 480px) {
+    footer {
+        padding: 3vh 8vw; /* Reduce padding on mobile for compact footer */
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr; /* Single column layout for mobile */
+    }
+
+    .footer-logo {
+        width: 20vw; /* Smaller logo size on mobile */
+    }
+
+    h4 {
+        font-size: 0.8em; /* Smaller heading size for mobile */
+    }
+
+    p {
+        font-size: 0.75em; /* Even smaller paragraph text for mobile */
+    }
+}
