@@ -1,0 +1,74 @@
+/*Dark Blue color: #062d66
+Teal color: #0bb19d
+ */
+html{scroll-behavior: smooth;}
+/*Body*/
+body{
+    background-color:#0bb19d ;
+}
+/* Navigation */
+nav {
+    background-color: #062d66; /* Dark blue */
+    padding: 10px 0;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+.nav-links li {
+    margin: 0 20px;
+}
+
+.nav-links a {
+    color: #FFF5F7;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+.nav-links .logo img {
+    height: 150px;
+    margin: 0;
+}
+/*Banner*/
+.banner {
+    background-image: url("../img/4.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.banner h1 {
+    font-size: 3em;
+    margin: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+footer {
+    background-color: #062d66;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.footer-logo img {
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+
