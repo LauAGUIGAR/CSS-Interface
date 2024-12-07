@@ -1,0 +1,607 @@
+html{scroll-behavior: smooth;}
+/*Fonts*/
+h1,h2,h3,h4,h5,h6{
+    font-family: AdvercaseFont-Demo-Bold,sans-serif;
+}
+
+@font-face {
+    font-family: "AdvercaseFont-Demo-Bold";
+    src: url("../fonts/AdvercaseFont-Demo-Bold.otf");
+    font-weight: auto;
+}
+@font-face {
+    font-family: "AdvercaseFont-Demo-Regular";
+    src: url("../fonts/AdvercaseFont-Demo-Regular.otf");
+    font-weight: auto;
+}
+/* Body and General Settings */
+body {
+    font-family: Lato, sans-serif;
+    background-color: #ffe6e6; /* Light pink for a soft monochromatic background */
+    color: #2b0000; /* Dark red text for contrast */
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+/* Navigation */
+nav {
+    background-color: #2b0000; /* Dark red, almost black */
+    padding: 10px 0;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-links a {
+    color: #FFF5F7; /* Light blush for links */
+    text-decoration: none;
+    font-size: 1.2em;
+    margin: 0 40px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ff4d4d; /* Bright red on hover */
+}
+
+nav img {
+    height: 200px; /* Logo size */
+    margin: 0 20px;
+}
+
+
+/* Header */
+header {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Neon Glow and Flicker Effect for h1 in index */
+header h1 {
+    font-size: 6em;
+    color: #2b0000; /* Dark red almost black for the text */
+    text-shadow:
+            0 0 5px #ffb3b3,
+            0 0 10px #ffb3b3,
+            0 0 15px #ffb3b3,
+            0 0 20px #ffb3b3,
+            0 0 30px #ffb3b3,
+            0 0 40px #ffb3b3,
+            0 0 50px #ffb3b3; /* Blush pink glow */
+    animation: flicker 1.5s infinite alternate; /* Flicker effect */
+}
+
+/* Flicker animation */
+@keyframes flicker {
+    0% {
+        text-shadow:
+                0 0 5px #ffb3b3,
+                0 0 10px #ffb3b3,
+                0 0 15px #ffb3b3,
+                0 0 20px #ffb3b3,
+                0 0 30px #ffb3b3,
+                0 0 40px #ffb3b3,
+                0 0 50px #ffb3b3; /* Bright blush pink glow */
+    }
+    20% {
+        text-shadow:
+                0 0 3px #ffb3b3,
+                0 0 6px #ffb3b3,
+                0 0 9px #ffb3b3,
+                0 0 12px #ffb3b3,
+                0 0 18px #ffb3b3; /* Slightly dimmer glow */
+    }
+    40% {
+        text-shadow:
+                0 0 4px #ffb3b3,
+                0 0 8px #ffb3b3,
+                0 0 12px #ffb3b3,
+                0 0 16px #ffb3b3,
+                0 0 22px #ffb3b3; /* Flickering effect */
+    }
+    60% {
+        text-shadow:
+                0 0 5px #ffb3b3,
+                0 0 10px #ffb3b3,
+                0 0 15px #ffb3b3,
+                0 0 20px #ffb3b3,
+                0 0 30px #ffb3b3,
+                0 0 40px #ffb3b3,
+                0 0 50px #ffb3b3; /* Full glow again */
+    }
+    80% {
+        text-shadow:
+                0 0 3px #ffb3b3,
+                0 0 6px #ffb3b3,
+                0 0 9px #ffb3b3,
+                0 0 12px #ffb3b3,
+                0 0 18px #ffb3b3; /* Slight dimming */
+    }
+    100% {
+        text-shadow:
+                0 0 5px #ffb3b3,
+                0 0 10px #ffb3b3,
+                0 0 15px #ffb3b3,
+                0 0 20px #ffb3b3,
+                0 0 30px #ffb3b3,
+                0 0 40px #ffb3b3,
+                0 0 50px #ffb3b3; /* Full glow again */
+    }
+}
+.cta-link {
+    text-decoration: none;}
+
+
+/* Content Section */
+.content {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr; /* Side images and center content */
+    gap: 20px;
+    margin: 20px;
+    align-items: center;
+}
+
+/* Images */
+.images {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.image-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.images img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s ease;
+}
+
+/* Overlay effect */
+.image-container .overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffb3b3;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    visibility: hidden;
+    font-family: AdvercaseFont-Demo-Bold,sans-serif;
+}
+
+/* Darken the image and show the overlay when hovering */
+.image-container:hover img {
+    opacity: 0.2;
+}
+
+.image-container:hover .overlay {
+    visibility: visible; /* Show overlay when hovered */
+}
+
+
+/* Video */
+.video video {
+    width: 100%;
+    height: 100%;
+    max-height: 600px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Footer Styling */
+footer {
+    background-color: #2b0000; /* Dark background */
+    color: #FFF5F7; /* White text */
+    text-align: center;
+    padding: 20px 10px;
+    font-size: 0.5em;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #ff006e; /* Neon effect for hover */
+}
+
+.footer-info {
+    margin-top: 10px;
+    line-height: 1.6;
+}
+
+.footer-social {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.footer-social a img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.2s ease;
+}
+
+.footer-social a:hover img {
+    transform: scale(1.2);
+}
+
+/* MENU */
+/* Product Carousel Styles */
+.product-carousel {
+    position: relative;
+    max-width: 100%;
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+.carousel-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.product {
+    flex: 1;
+    margin: 0 10px;
+    text-align: center;
+}
+
+/* Product Image Styles */
+.product img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.product img:hover {
+    transform: scale(1.1); /* Zoom effect on hover */
+}
+
+.product h2 {
+    font-size: 1.5em;
+    color: #2b0000;
+}
+
+.product p {
+    font-size: 1em;
+    color: #550000;
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 768px) {
+    .carousel-container {
+        justify-content: center;
+    }
+
+    .product {
+        flex: 0 0 45%;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product {
+        flex: 0 0 80%;
+    }
+}
+/*PRODUCTS*/
+/* Cocktail Details Section */
+.cocktail-details {
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 2fr;
+    gap: 20px;
+    margin: 20px;
+    padding: 20px;
+    align-items: center;
+}
+
+/* Title Styling - Rotated vertically */
+.cocktail-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(-90deg); /* Rotate the title */
+    transform-origin: center center;
+    height: 100%;
+    width: 100%;
+}
+.cocktail-title h1 {
+    font-size: 6em; /* Adjust the title size */
+    white-space: nowrap;
+    color: #b30000; /* Bright red for emphasis */
+}
+.cocktail-title h1 {
+    transition: color 0.3s ease-in-out;
+    color: #b30000; /* Default dark red color */
+}
+
+/* Change color when hovering over the .cocktail-title */
+.cocktail-title:hover h1 {
+    color: #ff4d4d;
+}
+
+
+/* Image Styling */
+.cocktail-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cocktail-image img {
+    max-width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Content Section Styling */
+.cocktail-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: left;
+    padding: 10px;
+}
+
+.cocktail-info h2 {
+    font-size: 1.5em;
+    color: #b30000; /* Vibrant red for section titles */
+    margin-bottom: 10px;
+}
+
+.cocktail-info p,
+.cocktail-info ul {
+    font-size: 1.1em;
+    color: #550000; /* Softer color for the text */
+    line-height: 1.6;
+}
+
+.cocktail-info ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.cocktail-info ul li {
+    margin: 5px 0;
+}
+
+.cocktail-info h2, .cocktail-info p {
+    margin-bottom: 15px;
+}
+
+/* Responsive Design - Stacking for smaller screens */
+@media (max-width: 768px) {
+    .cocktail-details {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        gap: 15px;
+    }
+
+    .cocktail-title h1 {
+        font-size: 2.5em;
+        transform: rotate(0);
+        text-align: center;
+    }
+
+    .cocktail-image img {
+        max-height: 300px;
+    }
+
+    .cocktail-info {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cocktail-details {
+        padding: 10px; /* Reduce padding on very small screens */
+    }
+
+    .cocktail-title h1 {
+        font-size: 2em;
+    }
+
+    .cocktail-image img {
+        max-height: 250px; /
+    }
+}
+/* About Section */
+.about {
+    margin: 20px;
+}
+
+/* Heading with clip-path */
+.about-heading {
+    text-align: center;
+    background-color: #b30000; /* Red background for the heading */
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%); /* Slight Slant */
+    padding: 30px;
+    color: #FFF5F7;;
+}
+
+.about-heading h1 {
+    font-size: 3.5em;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+/* Make sure "About" and "Capital Cocktails" appear on separate lines */
+.about-heading h1 br {
+    margin-bottom: 10px;
+}
+
+/* About content - Text and Image Grid */
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.about-content p {
+    font-size: 1.1em;
+    color: #2b0000;
+    line-height: 1.8;
+}
+
+.about-content img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+/* Contact Section */
+.contact {
+    margin: 20px;
+    padding: 20px;
+    background-color: #ffe6e6; /* Soft blush background */
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Soft shadow for the contact section */
+}
+
+/* Heading */
+.contact h1 {
+    text-align: center;
+    font-size: 3em;
+    color: #b30000; /* Vibrant red */
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+/* Form Styling */
+form {
+    display: grid;
+    gap: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+label {
+    font-size: 1.1em;
+    color: #2b0000; /* Dark red for label text */
+    font-weight: bold;
+}
+
+input, textarea {
+    padding: 12px;
+    font-size: 1.1em;
+    border: 1px solid #2b0000; /* Dark red border */
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    padding: 12px;
+    font-size: 1.2em;
+    background-color: #2b0000; /* Dark red */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-transform: uppercase;
+}
+
+button:hover {
+    background-color: #ff4d4d; /* Light red on hover */
+}
+
+/* Footer Section */
+footer {
+    background-color: #2b0000;
+    padding: 10px;
+    text-align: center;
+    color: #FFF5F7;
+}
+
+footer .footer-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .footer-links a {
+    color: #FFF5F7;
+    text-decoration: none;
+    margin: 0 25px;
+}
+
+footer img {
+    height: 120px;
+}
+
+footer .footer-links a:hover {
+    color: #ff4d4d;
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 768px) {
+    form {
+        max-width: 100%;
+    }
+
+    .contact h1 {
+        font-size: 2.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact h1 {
+        font-size: 2em;
+    }
+
+    button {
+        font-size: 1em;
+    }
+}
